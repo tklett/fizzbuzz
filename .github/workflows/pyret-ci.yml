@@ -30,3 +30,6 @@ jobs:
 
       - name: Parse/compile Pyret file
         run: npx pyret count-from-1-to-100.arr
+
+      - name: Run fizzbuzz checks
+        run: npx pyret fizzbuzz.arr
