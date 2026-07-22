@@ -2,8 +2,10 @@ fun count-up(n):
   if n > 100:
     nothing
   else:
-    print(n)
-    count-up(n + 1)
+    block:
+      print(n)
+      count-up(n + 1)
+    end
   end
 end
 
