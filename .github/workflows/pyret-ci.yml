@@ -1,0 +1,32 @@
+name: Pyret CI
+
+on:
+  push:
+    paths:
+      - '**.arr'
+      - '.github/workflows/pyret-ci.yml'
+  pull_request:
+    paths:
+      - '**.arr'
+      - '.github/workflows/pyret-ci.yml'
+
+jobs:
+  pyret-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pyret package
+        run: npm install --no-save pyret-lang
+
+      - name: Validate Pyret source file exists
+        run: test -f count-from-1-to-100.arr
+
+      - name: Parse/compile Pyret file
+        run: npx pyret-lang count-from-1-to-100.arr
