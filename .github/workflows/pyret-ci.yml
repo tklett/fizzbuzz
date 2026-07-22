@@ -29,4 +29,4 @@ jobs:
         run: test -f count-from-1-to-100.arr
 
       - name: Parse/compile Pyret file
-        run: npx pyret-lang count-from-1-to-100.arr
+        run: npx pyret count-from-1-to-100.arr
