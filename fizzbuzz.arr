@@ -14,12 +14,11 @@ end
 
 each(lam(n): print(fizzbuzz(n)) end, range(1, 101))
 
-fun print-numbers-to-100() -> Nothing:
-  each(lam(n): print(n) end, range(1, 101))
-  nothing
+fun numbers-to-100() -> List<Number>:
+  range(1, 101)
 end
 
-print-numbers-to-100()
+each(lam(n): print(n) end, numbers-to-100())
 
 check "fizzbuzz":
   fizzbuzz(1)  is "1"
@@ -30,4 +29,8 @@ check "fizzbuzz":
   fizzbuzz(9)  is "Fizz"
   fizzbuzz(10) is "Buzz"
   fizzbuzz(100) is "Buzz"
+end
+
+check "numbers-to-100":
+  numbers-to-100() is range(1, 101)
 end
