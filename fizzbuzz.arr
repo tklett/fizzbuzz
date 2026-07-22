@@ -14,9 +14,16 @@ end
 
 each(lam(n): print(fizzbuzz(n)) end, range(1, 101))
 
-fun count-to-100() -> Nothing:
-  each(lam(n): print(n) end, range(1, 101))
-  nothing
+fun count-from-to(start :: Number, finish :: Number) -> List<Number>:
+  if start > finish:
+    empty
+  else:
+    link(start, count-from-to(start + 1, finish))
+  end
+end
+
+fun count-to-100() -> List<Number>:
+  count-from-to(1, 100)
 end
 
 check "fizzbuzz":
@@ -28,4 +35,9 @@ check "fizzbuzz":
   fizzbuzz(9)  is "Fizz"
   fizzbuzz(10) is "Buzz"
   fizzbuzz(100) is "Buzz"
+end
+
+check "count-to-100":
+  count-from-to(3, 5) is [list: 3, 4, 5]
+  count-to-100() is range(1, 101)
 end
