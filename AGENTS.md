@@ -6,10 +6,10 @@
 - `count-from-1-to-100.arr` is a simple counting program and is the file currently exercised by CI.
 
 ## Key files
-- `/home/runner/work/fizzbuzz/fizzbuzz/README.md` — repository overview, runtime notes, and testing description.
-- `/home/runner/work/fizzbuzz/fizzbuzz/fizzbuzz.arr` — FizzBuzz logic, counting helpers, and inline `check:` tests.
-- `/home/runner/work/fizzbuzz/fizzbuzz/count-from-1-to-100.arr` — simple count-up example.
-- `/home/runner/work/fizzbuzz/fizzbuzz/.github/workflows/pyret-ci.yml` — GitHub Actions workflow for Pyret validation.
+- `README.md` — repository overview, runtime notes, and testing description.
+- `fizzbuzz.arr` — FizzBuzz logic, counting helpers, and inline `check:` tests.
+- `count-from-1-to-100.arr` — simple count-up example.
+- `.github/workflows/pyret-ci.yml` — GitHub Actions workflow for Pyret validation.
 
 ## Working conventions
 - Keep examples simple and educational; prefer small, readable Pyret functions over abstract helpers.
@@ -24,5 +24,5 @@
 - If you modify Pyret source files, prefer validating with the existing workflow command or an equivalent local Pyret run.
 
 ## Notes for future agents
-- Use absolute file paths when referring to repository files in this environment.
+- In this task environment, use absolute file paths when referring to repository files in agent responses or task notes.
 - Avoid adding extra tooling unless it is required by the task; this repository currently relies on the existing Pyret workflow.
