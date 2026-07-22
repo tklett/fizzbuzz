@@ -14,8 +14,16 @@ end
 
 each(lam(n): print(fizzbuzz(n)) end, range(1, 101))
 
+fun numbers-from-to(start :: Number, finish :: Number) -> List<Number>:
+  if start > finish:
+    empty
+  else:
+    link(start, numbers-from-to(start + 1, finish))
+  end
+end
+
 fun numbers-to-100() -> List<Number>:
-  range(1, 101)
+  numbers-from-to(1, 100)
 end
 
 each(lam(n): print(n) end, numbers-to-100())
@@ -32,5 +40,6 @@ check "fizzbuzz":
 end
 
 check "numbers-to-100":
+  numbers-from-to(3, 5) is [list: 3, 4, 5]
   numbers-to-100() is range(1, 101)
 end
