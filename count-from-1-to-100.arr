@@ -3,7 +3,11 @@ fun count-up(n):
     nothing
   else:
     block:
-      print(n)
+      if num-modulo(n, 3) == 0:
+        print("fizz")
+      else:
+        print(n)
+      end
       count-up(n + 1)
     end
   end
